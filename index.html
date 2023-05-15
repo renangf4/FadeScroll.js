@@ -6,11 +6,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Fade Scroll utilizando JQuery">
-    <meta name="keywords" content="fadescrol, fade, scroll, jquery, plugin, web, renan, morais, renan morais">
+    <meta name="keywords" content="fadescroll, fade, scroll, jquery, plugin, web, renan, morais, renan morais">
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/favicon.png">
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./dist/css/style.css">
     <title>FadeScroll JQuery - Renan Morais</title>
 </head>
 <body>
@@ -22,6 +22,7 @@
             <img src="img/arrow.png" alt="">
         </a>
     </header>
+
     <div class="c-content" id="content">
         <div class="container">
             <div class="d-flex justify-content-center">
@@ -59,10 +60,11 @@
 
         <a href="#funcionamento" class="js-anchor">Funcionamento</a>
     </div>
+
     <div class="c-funcionamento" id="funcionamento">
         <div class="container">
             <h3>Funcionamento</h3>
-            <p>Adicionar o Script <a href="./download/fadescroll.js" download target="_blank">FadeScroll.js</a></p>
+            <p>Adicionar o Script <a href="./dist/js/modules/fadescroll.js" download target="_blank">FadeScroll.js</a></p>
             <p>Adicionar a classe "fade-effect" onde for utilizar a animação.</p>
 
             <h3>Atributos</h3>
@@ -86,16 +88,8 @@
             <p>Exempo: class="fade-effect" fade-direction="bottom" fade-time="2"</p>
         </div>
     </div>
-    <script src="./js/index.js"></script>
-    <script src="./download/fadescroll.js"></script>
-    <script>
-        $('.js-anchor').click(function (e) {
-            e.preventDefault();
 
-            let linkID = $(this).attr('href');
-
-            $('html,body').animate({ scrollTop: $(linkID).offset().top }, 1000);
-        });
-    </script>
+    <script src="./dist/js/main.js"></script>
+    <script src="./dist/js/modules/fadescroll.js"></script>
 </body>
 </html>
