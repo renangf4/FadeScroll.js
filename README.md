@@ -6,7 +6,8 @@ O **FadeScroll.js** é um script leve e fácil de usar para adicionar efeitos de
 
 ## Instalação
 1. Faça o download do arquivo FadeScroll.js.
-2. Adicione o seguinte código no final do corpo do seu arquivo HTML:
+2. Antes de chamar o arquivo, chame o JQuery.
+3. Adicione o seguinte código no final do corpo do seu arquivo HTML:
 ```html
 <script src="caminho/para/FadeScroll.js"></script>
 ```
