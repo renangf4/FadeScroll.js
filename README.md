@@ -1,36 +1,36 @@
 
 # FadeScroll.js
 
-## Funcionamento
-O **FadeScroll.js** é um script leve e fácil de usar para adicionar efeitos de fade em elementos HTML durante o scroll da página. Siga as instruções abaixo para integrar e personalizar a animação conforme sua preferência.
+## Operation
+**FadeScroll.js** is a lightweight and easy-to-use script for adding fade effects to HTML elements during page scrolling. Follow the instructions below to integrate and customize the animation according to your preference.
 
-## Instalação
-1. Faça o download do arquivo FadeScroll.js.
-2. Antes de chamar o arquivo, chame o JQuery.
-3. Adicione o seguinte código no final do corpo do seu arquivo HTML:
+## Installation
+1. Download the FadeScroll.js file.
+2. Before calling the file, include JQuery.
+3. Add the following code at the end of your HTML file's body:
 ```html
 <script src="caminho/para/FadeScroll.js"></script>
 ```
 
-## Uso
-Para aplicar o efeito de fade, adicione a classe `<div class="fade-effect">` ao elemento HTML desejado. Utilize os seguintes atributos para personalizar a animação:
+## Usage
+To apply the fade effect, add the class `<div class="fade-effect">` to the desired HTML element. Use the following attributes to customize the animation:
 
-### Direção:
-- Superior: `<div class="fade-effect" fade-direction="top">`
-- Inferior: `<div class="fade-effect" fade-direction="bottom">`
-- Esquerda: `<div class="fade-effect" fade-direction="left">`
-- Direita: `<div class="fade-effect" fade-direction="right">`
+### Direction:
+- Top: `<div class="fade-effect" fade-direction="top">`
+- Bottom: `<div class="fade-effect" fade-direction="bottom">`
+- Left: `<div class="fade-effect" fade-direction="left">`
+- Right: `<div class="fade-effect" fade-direction="right">`
 
-### Tempo:
-O tempo é especificado em segundos.
-- Para 1 segundo, utilize: `<div class="fade-effect" fade-time="1">`
-- Para 500 milissegundos, utilize: `<div class="fade-effect" fade-time=".5">`
+### Time:
+Time is specified in seconds.
+- For 1 second, use: `<div class="fade-effect" fade-time="1">`
+- For 500 milliseconds, use: `<div class="fade-effect" fade-time=".5">`
 
-## Exemplo
+## Example
 ```html
 <div class="fade-effect" fade-direction="bottom" fade-time="2">
-  <!-- Seu conteúdo aqui -->
+  <!-- Your content here -->
 </div>
 ```
 
-Este exemplo aplicará um efeito de fade na direção inferior com uma duração de 2 segundos. Sinta-se à vontade para experimentar e ajustar os atributos conforme necessário para atender às suas preferências.
+This example will apply a fade effect in the bottom direction with a duration of 2 seconds. Feel free to experiment and adjust the attributes as needed to suit your preferences.

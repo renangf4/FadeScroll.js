@@ -9,14 +9,14 @@
     <meta name="keywords" content="fadescroll, fade, scroll, jquery, plugin, web, renan, morais, renan morais">
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="shortcut icon" href="https://moraissolucoes.com.br/wp-content/uploads/2023/05/Rectangle-1.png">
     <link rel="stylesheet" href="./dist/css/style.css">
-    <title>FadeScroll JQuery - Renan Morais</title>
+    <title>FadeScroll.js</title>
 </head>
 <body>
     <header class="c-banner">
-        <h1 class="c-banner__title">FadeScroll JQuery</h1>
-        <p>Criado por <a href="https://github.com/renangf4/" target="_blank">Renan Morais</a></p>
+        <h1 class="c-banner__title">FadeScroll.js</h1>
+        <p>A simple Animated Scroll</p>
 
         <a href="#content" class="arrow js-anchor">
             <img src="img/arrow.png" alt="">
@@ -27,65 +27,73 @@
         <div class="container">
             <div class="d-flex justify-content-center">
                 <div class="fade-effect" fade-time="3" fade-direction="top">
-                    class="fade-effect"<br>
-                    fade-time="3"<br>
-                    fade-direction="top"
+                    <p>TOP</p>
                 </div>
             </div>
 
             <div class="d-flex">
-                <div class="fade-effect" fade-time="2" fade-direction="left">
-                    class="fade-effect"<br>
-                    fade-time="2"<br>
-                    fade-direction="left"
+                <div class="fade-effect" fade-time="3" fade-direction="left">
+                    <p>LEFT</p>
                 </div>
             </div>
 
             <div class="d-flex justify-content-end">
-                <div class="fade-effect" fade-time="1" fade-direction="right">
-                    class="fade-effect"<br>
-                    fade-time="1"<br>
-                    fade-direction="right"
+                <div class="fade-effect" fade-time="3" fade-direction="right">
+                    <p>RIGHT</p>
                 </div>
             </div>
 
             <div class="d-flex justify-content-center">
-                <div class="fade-effect" fade-time=".5" fade-direction="bottom">
-                    class="fade-effect"<br>
-                    fade-time=".5"<br>
-                    fade-direction="bottom"
+                <div class="fade-effect" fade-time="3" fade-direction="bottom">
+                    <p>BOTTOM</p>
                 </div>
             </div>
         </div>
 
-        <a href="#funcionamento" class="js-anchor">Funcionamento</a>
+        <a href="#operation" class="js-anchor">Operation</a>
     </div>
 
-    <div class="c-funcionamento" id="funcionamento">
+    <div class="c-funcionamento" id="operation">
         <div class="container">
-            <h3>Funcionamento</h3>
-            <p>Adicionar o Script <a href="./dist/js/modules/fadescroll.js" download target="_blank">FadeScroll.js</a></p>
-            <p>Adicionar a classe "fade-effect" onde for utilizar a animação.</p>
+            <h3>Operation</h3>
+            <p><strong>FadeScroll.js</strong> is a lightweight and easy-to-use script for adding fade effects to HTML elements during page scrolling. Follow the instructions below to integrate and customize the animation according to your preference.</p>
 
-            <h3>Atributos</h3>
-            <p>
-                <b>Direção:</b><br>
-                Superior: fade-direction="top"<br>
-                Inferior: fade-direction="bottom"<br>
-                Esquerda: fade-direction="left"<br>
-                Direita: fade-direction="right"
-            </p>
-            <p>
-                <b>Tempo:</b><br>
-                Tempo é convertido para segundos.<br>
-                1 = 1 segundo<br>
-                .5 = 500 Milissegundos<br>
-                Uso em segundos: fade-time="1"<br>
-                Uso em milissegundos: fade-time=".5"
-            </p>
+            <h3>Installation</h3>
+            <ol>
+                <li>Download the <a href="./dist/js/modules/fadescroll.js" download target="_blank">FadeScroll.js</a> file.</li>
+                <li>Before calling the file, include JQuery.</li>
+                <li>Add the following code at the end of your HTML file's body:</li>
+            </ol>
+            <code class="d-block">
+                &lt;script src="path/to/FadeScroll.js"&gt;&lt;/script&gt;
+            </code>
 
-            <h3>Final</h3>
-            <p>Exempo: class="fade-effect" fade-direction="bottom" fade-time="2"</p>
+            <h3>Usage</h3>
+            <p>To apply the fade effect, add the class <code>&lt;div class="fade-effect"&gt;</code> to the desired HTML element. Use the following attributes to customize the animation:</p>
+
+            <h4>Direction:</h4>
+            <ul>
+                    <li>Top: <code>&lt;div class="fade-effect" fade-direction="top"&gt;</code></li>
+                    <li>Bottom: <code>&lt;div class="fade-effect" fade-direction="bottom"&gt;</code></li>
+                    <li>Left: <code>&lt;div class="fade-effect" fade-direction="left"&gt;</code></li>
+                    <li>Right: <code>&lt;div class="fade-effect" fade-direction="right"&gt;</code></li>
+            </ul>
+
+            <h4>Time:</h4>
+            <p>Time is specified in seconds.</p>
+            <ul>
+                <li>For 1 second, use: &lt;div class="fade-effect" fade-time="1"&gt;</li>
+                <li>For 500 milliseconds, use: &lt;div class="fade-effect" fade-time=".5"&gt;</li>
+            </ul>
+
+            <h3>Example:</h3>
+            <code class="d-block">
+                <pre>
+&lt;div class="fade-effect" fade-direction="bottom" fade-time="2"&gt;
+    &lt;!-- Your content here --&gt;
+&lt;/div&gt;</pre>
+            </code>
+            <p>This example will apply a fade effect in the bottom direction with a duration of 2 seconds. Feel free to experiment and adjust the attributes as needed to suit your preferences.</p>
         </div>
     </div>
 
