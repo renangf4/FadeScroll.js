@@ -1,9 +1,11 @@
-body{
-    min-height: calc(100vh + 1px);
-}
 .fade-effect{
     visibility: hidden;
+
+    &:not(.fade-effect-actived) {
+        transition: none;
+    }
 }
+
 @keyframes fade{
     0%{
         opacity: 0;

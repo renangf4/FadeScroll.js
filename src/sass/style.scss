@@ -1,6 +1,10 @@
 $primaryColor: #000;
 $font-family: 'Roboto', sans-serif;
 
+html, body {
+    scroll-behavior: smooth;
+}
+
 * {
 	box-sizing: border-box;
 	font-family: $font-family;

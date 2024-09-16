@@ -1,7 +1,7 @@
 require('../../sass/modules/_fadescroll.scss');
 
 const effects = {
-	top: {
+    top: {
         'animation-name': 'fade-top-active',
         'visibility': 'visible',
     },
@@ -23,33 +23,39 @@ const effects = {
     }
 };
 
-$.fn.fadescroll = function() {
-	$(this).each(function() {
-        let style = null;
-        let post = $(this).offset().top;
-        let fadet = $(window).scrollTop();
-        let effect = $(this).attr('fade-direction');
+function applyFadeEffect(element) {
+    let effect = element.getAttribute('fade-direction');
+    let fadeTime = element.getAttribute('fade-time') + 's';
 
-        if(effects[effect] !== undefined) {
-            style = effects[effect];
+    let style = effects[effect] || effects.none;
+
+    Object.keys(style).forEach((key) => {
+        element.style[key] = style[key];
+    });
+    element.style['animation-duration'] = fadeTime;
+    element.classList.add('fade-effect-actived');
+}
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            applyFadeEffect(entry.target);
+            observer.unobserve(entry.target);
         }
-
-        if (post < fadet + 600) {
-            $(this).css(style).css({
-                'animation-duration': $(this).attr('fade-time') + 's'
-            });
-        }
-
-        if( fadet > ($('body').outerHeight() - $(window).outerHeight()) ) {
-            $(this).css(style).css({
-                'animation-duration': $(this).attr('fade-time') + 's'
-            });
-        }
-	});
-};
-
-$(window).scroll(function() {
-    $('.fade-effect').fadescroll();
+    });
 });
 
-$("html, body").animate({scrollTop: ($(window).scrollTop() + 1)});
+document.querySelectorAll('.fade-effect').forEach(element => {
+    observer.observe(element);
+});
+
+
+let scrollTop = window.scrollY;
+let documentHeight = document.body.scrollHeight;
+let windowHeight = window.innerHeight;
+
+if (scrollTop === 0 && documentHeight <= windowHeight) {
+    window.scrollTo(0, 1);
+} else if (scrollTop + windowHeight >= documentHeight) {
+    window.scrollTo(0, scrollTop - 1);
+}
