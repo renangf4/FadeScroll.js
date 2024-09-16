@@ -6,8 +6,7 @@
 
 ## Installation
 1. Download the FadeScroll.js file.
-2. Before calling the file, include JQuery.
-3. Add the following code at the end of your HTML file's body:
+2. Add the following code at the end of your HTML file's body:
 ```html
 <script src="caminho/para/FadeScroll.js"></script>
 ```
