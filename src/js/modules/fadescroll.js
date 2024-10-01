@@ -36,7 +36,7 @@ function applyFadeEffect(element) {
     element.classList.add('fade-effect-actived');
 }
 
-const observer = new IntersectionObserver((entries, observer) => {
+const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             applyFadeEffect(entry.target);
@@ -45,10 +45,19 @@ const observer = new IntersectionObserver((entries, observer) => {
     });
 });
 
-document.querySelectorAll('.fade-effect').forEach(element => {
-    observer.observe(element);
+function observeNewElements() {
+    document.querySelectorAll('.fade-effect').forEach(element => {
+        observer.observe(element);
+    });
+}
+
+observeNewElements();
+
+const mutationObserver = new MutationObserver(() => {
+    observeNewElements();
 });
 
+mutationObserver.observe(document.body, { childList: true, subtree: true });
 
 let scrollTop = window.scrollY;
 let documentHeight = document.body.scrollHeight;
