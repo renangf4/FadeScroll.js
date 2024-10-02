@@ -1,5 +1,6 @@
 {
     "/dist/js/main.js": "/dist/js/main.js",
-    "/dist/js/modules/fadescroll.js": "/dist/js/modules/fadescroll.js",
+    "/dist/js/modules/fadescroll-1.0.0.min.js": "/dist/js/modules/fadescroll-1.0.0.min.js",
+    "/dist/js/modules/fadescroll-2.0.0.min.js": "/dist/js/modules/fadescroll-2.0.0.min.js",
     "/dist/css/style.css": "/dist/css/style.css"
 }

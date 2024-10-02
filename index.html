@@ -15,10 +15,10 @@
 </head>
 <body>
     <header class="c-banner">
-        <h1 class="c-banner__title">FadeScroll.js</h1>
-        <p>A simple Animated Scroll</p>
+        <h1 class="c-banner__title fade-effect" fade-direction="top" fade-time="1">FadeScroll.js</h1>
+        <p class="fade-effect" fade-direction="bottom" fade-time="1">A simple Animated Scroll</p>
 
-        <a href="#content" class="arrow js-anchor">
+        <a href="#content" class="arrow js-anchor fade-effect" fade-direction="bottom" fade-time="1">
             <img src="img/arrow.png" alt="">
         </a>
     </header>
@@ -48,6 +48,11 @@
                     <p>BOTTOM</p>
                 </div>
             </div>
+            <div class="d-flex justify-content-start mt-5">
+                <div class="fade-effect" fade-time="4" fade-direction="none">
+                    <p>NONE</p>
+                </div>
+            </div>
         </div>
 
         <a href="#operation" class="js-anchor">Operation</a>
@@ -60,7 +65,7 @@
 
             <h3>Installation</h3>
             <ol>
-                <li>Download the <a href="./dist/js/modules/fadescroll.js" download target="_blank">FadeScroll.js</a> file.</li>
+                <li>Download the <a href="./dist/js/modules/fadescroll-2.0.0.js" download target="_blank">FadeScroll.js</a> file.</li>
                 <li>Add the following code at the end of your HTML file's body:</li>
             </ol>
             <code class="d-block">
@@ -97,6 +102,6 @@
     </div>
 
     <script src="./dist/js/main.js"></script>
-    <script src="./dist/js/modules/fadescroll.js"></script>
+    <script src="./dist/js/modules/fadescroll-2.0.0.js"></script>
 </body>
 </html>

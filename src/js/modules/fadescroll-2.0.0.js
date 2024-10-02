@@ -1,4 +1,4 @@
-require('../../sass/modules/_fadescroll.scss');
+require('../../sass/modules/_fadescroll-2.0.0.scss');
 
 const effects = {
     top: {
@@ -36,7 +36,7 @@ function applyFadeEffect(element) {
     element.classList.add('fade-effect-actived');
 }
 
-const observer = new IntersectionObserver((entries) => {
+const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             applyFadeEffect(entry.target);
@@ -45,19 +45,10 @@ const observer = new IntersectionObserver((entries) => {
     });
 });
 
-function observeNewElements() {
-    document.querySelectorAll('.fade-effect').forEach(element => {
-        observer.observe(element);
-    });
-}
-
-observeNewElements();
-
-const mutationObserver = new MutationObserver(() => {
-    observeNewElements();
+document.querySelectorAll('.fade-effect').forEach(element => {
+    observer.observe(element);
 });
 
-mutationObserver.observe(document.body, { childList: true, subtree: true });
 
 let scrollTop = window.scrollY;
 let documentHeight = document.body.scrollHeight;
