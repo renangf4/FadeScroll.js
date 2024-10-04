@@ -45,6 +45,8 @@ $.fn.fadescroll = function() {
                 'animation-duration': $(this).attr('fade-time') + 's'
             });
         }
+
+        $(this).addClass('fade-effect-actived');
 	});
 };
 
