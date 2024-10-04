@@ -537,8 +537,19 @@ $.fn.fadescroll = function () {
 $(window).scroll(function () {
   $('.fade-effect').fadescroll();
 });
-$("html, body").animate({
-  scrollTop: $(window).scrollTop() + 1
+var observer = new MutationObserver(function (mutations) {
+  mutations.forEach(function (mutation) {
+    if (mutation.addedNodes.length > 0) {
+      $(mutation.addedNodes).find('.fade-effect').fadescroll();
+    }
+  });
+});
+observer.observe(document.body, {
+  childList: true,
+  subtree: true
+});
+$(document).ready(function () {
+  $('.fade-effect').fadescroll();
 });
 })();
 
