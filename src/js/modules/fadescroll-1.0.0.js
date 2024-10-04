@@ -1,7 +1,7 @@
 require('../../sass/modules/_fadescroll-1.0.0.scss');
 
 const effects = {
-	top: {
+    top: {
         'animation-name': 'fade-top-active',
         'visibility': 'visible',
     },
@@ -24,7 +24,7 @@ const effects = {
 };
 
 $.fn.fadescroll = function() {
-	$(this).each(function() {
+    $(this).each(function() {
         let style = null;
         let post = $(this).offset().top;
         let fadet = $(window).scrollTop();
@@ -47,11 +47,26 @@ $.fn.fadescroll = function() {
         }
 
         $(this).addClass('fade-effect-actived');
-	});
+    });
 };
 
 $(window).scroll(function() {
     $('.fade-effect').fadescroll();
 });
 
-$("html, body").animate({scrollTop: ($(window).scrollTop() + 1)});
+const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+        if (mutation.addedNodes.length > 0) {
+            $(mutation.addedNodes).find('.fade-effect').fadescroll();
+        }
+    });
+});
+
+observer.observe(document.body, {
+    childList: true,
+    subtree: true
+});
+
+$(document).ready(function() {
+    $('.fade-effect').fadescroll();
+});
