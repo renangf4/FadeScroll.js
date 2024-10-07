@@ -18,7 +18,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  min-height: calc(100vh + 1px);\n}\n\n.fade-effect {\n  visibility: hidden;\n}\n\n@keyframes fade {\n  0% {\n    opacity: 0;\n    visibility: hidden;\n    transform: scale(0);\n  }\n  100% {\n    opacity: 1;\n    visibility: visible;\n    transform: scale(1);\n  }\n}\n@keyframes fade-top-active {\n  0% {\n    transform: translateY(-100%);\n    opacity: 0;\n  }\n  100% {\n    transform: translateY(0%);\n    opacity: 1;\n  }\n}\n@keyframes fade-right-active {\n  0% {\n    transform: translateX(100%);\n    opacity: 0;\n  }\n  100% {\n    transform: translateX(0%);\n    opacity: 1;\n  }\n}\n@keyframes fade-bottom-active {\n  0% {\n    transform: translateY(100%);\n    opacity: 0;\n  }\n  100% {\n    transform: translateY(0%);\n    opacity: 1;\n  }\n}\n@keyframes fade-left-active {\n  0% {\n    transform: translateX(-100%);\n    opacity: 0;\n  }\n  100% {\n    transform: translateX(0%);\n    opacity: 1;\n  }\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  min-height: calc(100vh + 1px);\n}\n\n.fade-effect {\n  visibility: hidden;\n}\n.fade-effect:not(.fade-effect-actived) {\n  transition: none;\n}\n\n@keyframes fade {\n  0% {\n    opacity: 0;\n    visibility: hidden;\n    transform: scale(0);\n  }\n  100% {\n    opacity: 1;\n    visibility: visible;\n    transform: scale(1);\n  }\n}\n@keyframes fade-top-active {\n  0% {\n    transform: translateY(-100%);\n    opacity: 0;\n  }\n  100% {\n    transform: translateY(0%);\n    opacity: 1;\n  }\n}\n@keyframes fade-right-active {\n  0% {\n    transform: translateX(100%);\n    opacity: 0;\n  }\n  100% {\n    transform: translateX(0%);\n    opacity: 1;\n  }\n}\n@keyframes fade-bottom-active {\n  0% {\n    transform: translateY(100%);\n    opacity: 0;\n  }\n  100% {\n    transform: translateY(0%);\n    opacity: 1;\n  }\n}\n@keyframes fade-left-active {\n  0% {\n    transform: translateX(-100%);\n    opacity: 0;\n  }\n  100% {\n    transform: translateX(0%);\n    opacity: 1;\n  }\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -517,18 +517,21 @@ $.fn.fadescroll = function () {
     var style = null;
     var post = $(this).offset().top;
     var fadet = $(window).scrollTop();
-    var effect = $(this).attr('fade-direction');
+    var effect = $(this).attr('fade-direction') || 'bottom';
+    var time = $(this).attr('fade-time') || 1;
     if (effects[effect] !== undefined) {
       style = effects[effect];
+    } else {
+      style = effects['bottom'];
     }
     if (post < fadet + 600) {
       $(this).css(style).css({
-        'animation-duration': $(this).attr('fade-time') + 's'
+        'animation-duration': time + 's'
       });
     }
     if (fadet > $('body').outerHeight() - $(window).outerHeight()) {
       $(this).css(style).css({
-        'animation-duration': $(this).attr('fade-time') + 's'
+        'animation-duration': time + 's'
       });
     }
     $(this).addClass('fade-effect-actived');

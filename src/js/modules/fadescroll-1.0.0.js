@@ -28,21 +28,24 @@ $.fn.fadescroll = function() {
         let style = null;
         let post = $(this).offset().top;
         let fadet = $(window).scrollTop();
-        let effect = $(this).attr('fade-direction');
+        let effect = $(this).attr('fade-direction') || 'bottom';
+        let time = $(this).attr('fade-time') || 1;
 
         if(effects[effect] !== undefined) {
             style = effects[effect];
+        } else {
+            style = effects['bottom'];
         }
 
         if (post < fadet + 600) {
             $(this).css(style).css({
-                'animation-duration': $(this).attr('fade-time') + 's'
+                'animation-duration': time + 's'
             });
         }
 
-        if( fadet > ($('body').outerHeight() - $(window).outerHeight()) ) {
+        if(fadet > ($('body').outerHeight() - $(window).outerHeight())) {
             $(this).css(style).css({
-                'animation-duration': $(this).attr('fade-time') + 's'
+                'animation-duration': time + 's'
             });
         }
 

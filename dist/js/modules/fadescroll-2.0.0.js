@@ -513,8 +513,8 @@ var effects = {
   }
 };
 function applyFadeEffect(element) {
-  var effect = element.getAttribute('fade-direction');
-  var fadeTime = element.getAttribute('fade-time') + 's';
+  var effect = element.getAttribute('fade-direction') || 'bottom';
+  var fadeTime = (element.getAttribute('fade-time') || 1) + 's';
   var style = effects[effect] || effects.none;
   Object.keys(style).forEach(function (key) {
     element.style[key] = style[key];

@@ -24,8 +24,8 @@ const effects = {
 };
 
 function applyFadeEffect(element) {
-    let effect = element.getAttribute('fade-direction');
-    let fadeTime = element.getAttribute('fade-time') + 's';
+    let effect = element.getAttribute('fade-direction') || 'bottom';
+    let fadeTime = (element.getAttribute('fade-time') || 1) + 's';
 
     let style = effects[effect] || effects.none;
 
@@ -48,7 +48,6 @@ const observer = new IntersectionObserver((entries, observer) => {
 document.querySelectorAll('.fade-effect').forEach(element => {
     observer.observe(element);
 });
-
 
 let scrollTop = window.scrollY;
 let documentHeight = document.body.scrollHeight;
